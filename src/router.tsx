@@ -7,7 +7,7 @@ function RouterConfig({ history ,app }) {
   const IndexPage = dynamic({
     app,
     models: () => [
-      System.import(/* webpackChunkName: "exampleModel" */ './models/example').then(module=>module.default),
+      System.import(/* webpackChunkName: "exampleModel" */ './models/example'),
     ],
     component: () => System.import(/* webpackChunkName: "IndexPage" */'./routes/IndexPage'),
   });

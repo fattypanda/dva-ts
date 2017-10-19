@@ -23,5 +23,9 @@ module.exports = (webpackConfig)=>{
   webpackConfig.module.rules.push(sassRule);
 
 
+  //awesome-typescript
+  webpackConfig.module.rules[7].use.pop();
+
+
   return webpackConfig;
 };
