@@ -1,4 +1,4 @@
-import path from 'path';
+
 
 
 module.exports = (webpackConfig)=>{
@@ -25,10 +25,6 @@ module.exports = (webpackConfig)=>{
 
   //awesome-typescript
   webpackConfig.module.rules[7].use.pop();
-
-  webpackConfig.resolve.alias={
-    'components':path.resolve(__dirname, './src/components'),
-  }
 
 
   return webpackConfig;
