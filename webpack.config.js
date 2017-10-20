@@ -28,7 +28,8 @@ module.exports = (webpackConfig) => {
     'domainComponents': path.resolve(__dirname, './src/domainComponents'),
     'utils': path.resolve(__dirname, './src/utils'),
     'modules': path.resolve(__dirname, './src/modules'),
-    'routes': path.resolve(__dirname, "./src/routes")
+    'routes': path.resolve(__dirname, "./src/routes"),
+    'interfaces': path.resolve(__dirname, "./src/interfaces")
   }
 
 

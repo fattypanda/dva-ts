@@ -22,6 +22,9 @@
       ],
       "routes": [
         "routes"
+      ],
+      "interfaces": [
+        "interfaces"
       ]
     }
   },
