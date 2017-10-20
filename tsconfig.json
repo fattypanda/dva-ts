@@ -5,7 +5,13 @@
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": "./src", 
+    "paths": {
+      "components": ["components"],
+      "domainComponents":["domainComponents"],
+      "utils":["src/utils"]
+    }
   },
   "exclude": [
     "node_modules"

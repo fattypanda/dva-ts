@@ -1,5 +1,4 @@
-import React from 'react';
-
+import * as  React from 'react';
 const Example = () => {
   return (
     <div>
@@ -8,7 +7,5 @@ const Example = () => {
   );
 };
 
-Example.propTypes = {
-};
 
 export default Example;
