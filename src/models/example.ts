@@ -1,3 +1,4 @@
+import * as services from '../services/example'
 
 export default {
 
@@ -6,13 +7,15 @@ export default {
   state: {},
 
   subscriptions: {
-    setup({ dispatch, history }) {  // eslint-disable-line
+    setup({ dispatch, history }) {
     },
   },
 
   effects: {
-    *fetch({ payload }, { call, put }) {  // eslint-disable-line
+    *fetch({ payload }, { call, put }) {
       yield put({ type: 'save' });
+      const res = yield call(services.query, { user: 1 })
+      return res;
     },
   },
 
