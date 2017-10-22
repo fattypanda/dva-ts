@@ -4,38 +4,43 @@ export interface ReduxAction {
     [propName: string]: any,
 }
 
-export interface ReduxSagaEffect {
+export interface ReduxSagaEffects {
     put: any,
     call: any,
     select: any,
 }
 
 export interface DvaModelReducer {
-    [reducerName: string]: (preState: object, action: ReduxAction) => object
+    (preState: object, action: ReduxAction): object
+}
+
+export interface DvaModelReducers {
+    [reducerName: string]: DvaModelReducer
 }
 
 export interface DvaModelEffectFn {
-    (action: ReduxAction, sagaEffects: ReduxSagaEffect): any
+    (action: ReduxAction, sagaEffects: ReduxSagaEffects): any
 }
 
-export interface ReduxSagaTake {
+export interface ReduxSagaTaker {
     type: string
     [propsName: string]: any
 }
 // problem
-export interface DvaModelEffectWithTake {
-    1: DvaModelEffectFn
-    [index: number]: any | ReduxSagaTake
+export interface DvaModelEffectWithTaker extends Array<any> {
+    [index: number]: ReduxSagaTaker | DvaModelEffectFn,
 }
 
-export interface DvaModelEffect {
-    [effectName: string]: DvaModelEffectFn | DvaModelEffectWithTake
+export type DvaModelEffect = DvaModelEffectFn | DvaModelEffectWithTaker
+
+export interface DvaModelEffects {
+    [effectName: string]: DvaModelEffect
 }
 
 export interface DvaModel {
     namespace: string,
     state?: object,
-    reducers?: DvaModelReducer,
-    effects?: DvaModelEffect,
+    reducers?: DvaModelReducers,
+    effects?: DvaModelEffects,
     subscriptions?: object
 }

@@ -15,7 +15,9 @@ const model: DvaModel = {
     },
 
     effects: {
+        * fetch(action, sagaEffects) {
 
+        }
     },
 
     reducers: {
