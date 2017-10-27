@@ -1,11 +1,13 @@
 import dva from 'dva';
 import router from './router';
+import createLoading from 'dva-loading';
+import createLastEffectTime from 'utils/dvaLastEffectTime';
 // 1. Initialize
 const app = dva();
 
 // 2. Plugins
-// app.use({});
-
+app.use(createLoading({ effects: true }));
+app.use(createLastEffectTime());
 // 3. Model
 // app.model(require('./models/example'));
 

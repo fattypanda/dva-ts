@@ -14,5 +14,11 @@ function IndexPage({ dispatch }) {
     );
 }
 
+const mapStateToProps = state => {
+    console.info(state.lastEffectTime)
+    return {
 
-export default connect()(IndexPage);
+    }
+}
+
+export default connect(mapStateToProps)(IndexPage);
