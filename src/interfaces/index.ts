@@ -1,6 +1,6 @@
 
 export interface ReduxAction {
-    type: string
+    type: string,
     [propName: string]: any,
 }
 
@@ -23,7 +23,7 @@ export interface DvaModelEffectFn {
 }
 
 export interface ReduxSagaTaker {
-    type: string
+    type: string,
     [propsName: string]: any
 }
 // problem

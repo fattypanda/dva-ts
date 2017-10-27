@@ -2,6 +2,12 @@ import dva from 'dva';
 import router from './router';
 import createLoading from 'dva-loading';
 import createLastEffectTime from 'utils/dvaLastEffectTime';
+
+import MainWrapperModel from 'modules/MainWrapper/Model';
+
+const modelList = [
+    MainWrapperModel
+]
 // 1. Initialize
 const app = dva();
 
@@ -9,8 +15,10 @@ const app = dva();
 app.use(createLoading({ effects: true }));
 app.use(createLastEffectTime());
 // 3. Model
-// app.model(require('./models/example'));
 
+
+
+modelList.forEach(app.model)
 
 // 4. Router
 app.router(router);

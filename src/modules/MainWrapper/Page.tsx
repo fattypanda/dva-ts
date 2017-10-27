@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'dva';
 import { DatePicker, Button, Card } from 'antd';
+import classnames from 'classnames';
 const styles = require('./styles.scss');
 
 function IndexPage({ dispatch }) {
@@ -8,8 +9,9 @@ function IndexPage({ dispatch }) {
     })
     return (
         <div className={styles["title"]}>
-            <Button type="primary">123123</Button>
-            <Card title="xxxx"> 123</Card>
+            <Card title="xxxx">
+                <Button type="primary">123123</Button>
+            </Card>
         </div>
     );
 }
