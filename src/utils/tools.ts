@@ -33,11 +33,6 @@ export const download = (url: string, fileName: string = url.substring(url.lastI
     link.click();
 }
 
-interface CommonFn {
-    (...rest): any
-}
-export const curry = (fn: CommonFn, ...rest) => () => fn(rest)
-
 export const delay = (times: number): Promise<void> => new Promise(resolve => setTimeout(() => resolve(), times))
 
 export const setTemp = (key: string, value: object) => window.sessionStorage.setItem(key, JSON.stringify(value))
@@ -59,3 +54,4 @@ export const momentToTimeStamp = (moment?: Moment): Timestamp => {
 };
 
 export const momentToTimeStampRange = (momentList: (Moment | void)[] = []): Timestamp[] => momentList.map(momentToTimeStamp)
+

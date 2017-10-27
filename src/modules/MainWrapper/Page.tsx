@@ -17,7 +17,7 @@ function IndexPage({ dispatch }) {
 }
 
 const mapStateToProps = state => {
-    console.info(state.lastEffectTime)
+    // console.info(state.lastEffectTime)
     return {
 
     }

@@ -2,7 +2,7 @@ import dva from 'dva';
 import router from './router';
 import createLoading from 'dva-loading';
 import createLastEffectTime from 'utils/dvaLastEffectTime';
-
+import * as tools from 'utils/tools';
 import MainWrapperModel from 'modules/MainWrapper/Model';
 
 const modelList = [
