@@ -27,7 +27,7 @@ export interface ReduxSagaTaker {
     [propsName: string]: any
 }
 // problem
-export interface DvaModelEffectWithTaker extends Array<any> {
+export interface DvaModelEffectWithTaker extends Array<ReduxSagaTaker | DvaModelEffectFn> {
     [index: number]: ReduxSagaTaker | DvaModelEffectFn,
 }
 
@@ -37,9 +37,9 @@ export interface DvaModelEffects {
     [effectName: string]: DvaModelEffect
 }
 
-export interface DvaModel {
+export interface DvaModel<T> {
     namespace: string,
-    state?: object,
+    state?: T,
     reducers?: DvaModelReducers,
     effects?: DvaModelEffects,
     subscriptions?: object

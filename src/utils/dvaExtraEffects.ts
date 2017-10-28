@@ -8,8 +8,8 @@ import {
     ReduxSagaEffects
 } from 'interfaces'
 
-export interface CombineExtraEffects {
-    (model: DvaModel, options?: ExtraOptions): DvaModel
+export interface CombineExtraEffects<T> {
+    (model: DvaModel<T>, options?: ExtraOptions): DvaModel<T>
 }
 
 export interface AddExtraSagaEffects {
@@ -33,10 +33,10 @@ export interface GetWrappedSagaEffects {
 }
 
 // problem
-export const combineExtraEffects: CombineExtraEffects = (
+export const combineExtraEffects: CombineExtraEffects<any> = (
     model,
     options = {},
-): DvaModel => {
+): DvaModel<any> => {
 
     const { effects = {} } = model,
 

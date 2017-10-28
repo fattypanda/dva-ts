@@ -13,9 +13,6 @@ const model: DvaModel<any> = {
 
     subscriptions: {
         setup({ dispatch, history }) {
-            history.listen(({ pathname, search }) => {
-                console.info(pathname, search);
-            })
         },
     },
 

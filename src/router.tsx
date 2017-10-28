@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { Router, Route, Switch } from 'dva/router';
 import dynamic from 'dva/dynamic';
-import getMainWrapper from 'routes/MainWrapper';
+import MainWrapper from 'modules/MainWrapper/Page';
+import getLoginPage from 'routes/User';
 
 function RouterConfig({ history, app }) {
   return (
     <Router history={history}>
-      <Switch>
-        <Route path="/" exact component={getMainWrapper(app)} >
-
-        </Route>
-      </Switch>
+      <MainWrapper>
+        <Switch>
+          <Route path="/login" exact component={getLoginPage(app)} />
+        </Switch>
+      </MainWrapper>
     </Router>
   );
 }

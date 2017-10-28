@@ -5,7 +5,7 @@ export default (app: any): React.Component => {
     return dynamic({
         app,
         models: () => [
-            System.import(/* webpackChunkName: "exampleModel" */ '../models/example'),
+            System.import(/* webpackChunkName: "exampleModel" */ 'modules/MainWrapper/Model'),
         ],
         component: () => System.import(/* webpackChunkName: "IndexPage" */'modules/MainWrapper/Page'),
     });

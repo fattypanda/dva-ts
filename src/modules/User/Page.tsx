@@ -2,17 +2,12 @@ import * as React from 'react';
 import { connect } from 'dva';
 import { DatePicker, Button, Card } from 'antd';
 import classnames from 'classnames';
-import { Link, withRouter } from 'dva/router';
 const styles = require('./styles.scss');
 
-function IndexPage({ dispatch, children }) {
-
+function IndexPage({ dispatch }) {
     return (
         <div className={styles["title"]}>
-            <Card title="Main Wrapper">
-                <Link to="/login" >Login</Link>
-            </Card>
-            {children}
+            this is Login
         </div>
     );
 }
@@ -24,4 +19,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(IndexPage));
+export default connect(mapStateToProps)(IndexPage);
