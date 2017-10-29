@@ -13,7 +13,7 @@ interface CommonFn {
 
 export const HOLDER = Symbol("HOLDER");
 
-const curry = (fn: CommonFn, args: any[] = [], holes: any[] = [], length: number = fn.length) => (...innerArgs) => {
+const curry = (fn: CommonFn, length: number = fn.length, args: any[] = [], holes: any[] = [], ) => (...innerArgs) => {
     let argLength = args.length,
         holeLength = holes.length;
 
@@ -31,6 +31,6 @@ const curry = (fn: CommonFn, args: any[] = [], holes: any[] = [], length: number
         }
     })
 
-    return args.length < length ? curry(fn, args, holes, length) : fn(...args);
+    return args.length < length ? curry(fn, length, args, holes) : fn(...args);
 }
 
