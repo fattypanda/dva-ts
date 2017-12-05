@@ -1,6 +1,6 @@
 declare module "*.css" {
   const content: {
-    [propName:string]:any
+    [propName: string]: any
   };
   export default content;
 }
@@ -11,7 +11,7 @@ declare module "*.scss" {
 }
 
 declare module "*.json" {
-  const content:object;
+  const content: object;
   export default content;
 }
 
@@ -21,4 +21,10 @@ declare const require: {
   ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
 };
 
-declare const System: any;
+interface System {
+  import<T = any>(module: string): Promise<T>
+}
+
+declare const System: System
+
+declare module 'react-async-component';

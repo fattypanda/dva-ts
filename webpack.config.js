@@ -1,6 +1,6 @@
 import path from 'path';
-
-
+import webpack from 'webpack'
+import aliasConfig from './alias.configs'
 module.exports = (webpackConfig) => {
 
 
@@ -31,15 +31,7 @@ module.exports = (webpackConfig) => {
   //awesome-typescript
   webpackConfig.module.rules[7].use.pop();
 
-  webpackConfig.resolve.alias = {
-    'components': path.resolve(__dirname, './src/components'),
-    'domainComponents': path.resolve(__dirname, './src/domainComponents'),
-    'utils': path.resolve(__dirname, './src/utils'),
-    'modules': path.resolve(__dirname, './src/modules'),
-    'routes': path.resolve(__dirname, "./src/routes"),
-    'interfaces': path.resolve(__dirname, "./src/interfaces"),
-    "configs": path.resolve(__dirname, "./src/configs")
-  }
+  webpackConfig.resolve.alias = aliasConfig
 
   webpackConfig.plugins.push(new webpack.HashedModuleIdsPlugin())
   webpackConfig.plugins.push(new webpack.optimize.CommonsChunkPlugin({
