@@ -1,17 +1,16 @@
-import dva from 'dva';
-import router from './router';
-import createLoading from 'dva-loading';
-import createLastEffectTime from 'utils/dvaLastEffectTime';
+import dva from 'dva'
+import router from './router'
+import createLoading from 'dva-loading'
+import createLastEffectTime from 'utils/dvaLastEffectTime'
 import createHistory from 'history/createBrowserHistory'
-import * as tools from 'utils/tools';
-import MainWrapperModel from 'modules/MainWrapper/Model';
-
+import * as tools from 'utils/tools'
+import MainWrapperModel from 'modules/MainWrapper/Model'
 const modelList = [
-    MainWrapperModel
+  MainWrapperModel
 ]
-// 1. Initialize
+
 const app = dva({
-    // history: createHistory()
+  // history: createHistory()
 });
 
 // 2. Plugins
@@ -26,3 +25,4 @@ app.router(router);
 
 // 5. Start
 app.start('#root');
+

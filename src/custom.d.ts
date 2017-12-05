@@ -28,3 +28,11 @@ interface System {
 declare const System: System
 
 declare module 'react-async-component';
+
+declare const describe: {
+  (...args): any
+}
+
+declare const it: {
+  (...args): any
+}

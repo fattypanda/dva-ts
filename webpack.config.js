@@ -1,6 +1,8 @@
 import path from 'path';
 import webpack from 'webpack'
 import aliasConfig from './alias.configs'
+
+
 module.exports = (webpackConfig) => {
 
 
@@ -29,7 +31,7 @@ module.exports = (webpackConfig) => {
   webpackConfig.module.rules.push(sassRule);
 
   //awesome-typescript
-  webpackConfig.module.rules[7].use.pop();
+  // webpackConfig.module.rules[7].use.pop();
 
   webpackConfig.resolve.alias = aliasConfig
 
