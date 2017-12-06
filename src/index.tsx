@@ -5,6 +5,7 @@ import createLastEffectTime from 'utils/dvaLastEffectTime'
 import createHistory from 'history/createBrowserHistory'
 import * as tools from 'utils/tools'
 import MainWrapperModel from 'modules/MainWrapper/Model'
+
 const modelList = [
   MainWrapperModel
 ]

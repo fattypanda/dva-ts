@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2017",
+    "module": "es6",
+    "target": "es2015",
+    "experimentalDecorators": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "allowJs": true,
     "baseUrl": "./src",
+    "moduleResolution": "node",
     "paths": {
       "components": [
         "components"
@@ -28,6 +30,9 @@
       ],
       "configs": [
         "configs"
+      ],
+      "assets": [
+        "assets"
       ]
     }
   },
