@@ -11,7 +11,7 @@ const modelList = [
 ]
 
 const app = dva({
-  // history: createHistory()
+  history: createHistory()
 });
 
 // 2. Plugins

@@ -3,6 +3,9 @@ import { Router, Route, Switch } from 'dva/router';
 import dynamic from 'dva/dynamic';
 import MainWrapper from 'modules/MainWrapper/Page';
 import getLoginPage from 'routes/User';
+import NProgress from 'nprogress'
+
+NProgress.start()
 
 function RouterConfig({ history, app }) {
   return (
