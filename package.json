@@ -3,7 +3,7 @@
   "scripts": {
     "start": "set PORT=8002&&roadhog server",
     "build": "roadhog build",
-    "test": "mocha -r ./node_modules/ts-node/register test/**/*.ts"
+    "test": "mocha -r ./test/register test/**/*.ts"
   },
   "engines": {
     "install-node": "6.11.1"
