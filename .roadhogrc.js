@@ -3,13 +3,7 @@ export default {
   "proxy": {
     "/api": "http://172.31.50.78:7300/mock/59aceff89b1b9039308834b0/acs"
   },
-  "theme": {
-    "@primary-color": "#0e77ca",
-    "@link-color": "#0e77ca",
-    "@border-radius-base": "2px",
-    "@font-size-base": "16px",
-    "@line-height-base": "1.2"
-  },
+  "theme": "./theme.config.js",
   "env": {
     "development": {
       "extraBabelPlugins": [

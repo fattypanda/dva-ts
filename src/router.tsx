@@ -5,7 +5,6 @@ import MainWrapper from 'modules/MainWrapper/Page';
 import getLoginPage from 'routes/User';
 import NProgress from 'nprogress'
 
-NProgress.start()
 
 function RouterConfig({ history, app }) {
   return (
