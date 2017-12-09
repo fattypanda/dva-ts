@@ -1,5 +1,3 @@
-
-
 import { NAMESPACE } from './ConstConfig'
 import { DvaModel } from 'interfaces/index';
 
@@ -7,30 +5,30 @@ import { DvaModel } from 'interfaces/index';
 
 const model: DvaModel<any> = {
 
-    namespace: NAMESPACE,
+  namespace: NAMESPACE,
 
-    state: {},
+  state: {},
 
-    subscriptions: {
-        setup({ dispatch, history }) {
-            history.listen(({ pathname, search }) => {
-                console.info(pathname, search);
-            })
-        },
+  reducers: {
+    save(state, action) {
+      return { ...state, ...action.payload };
     },
+  },
 
-    effects: {
-        * fetch(action, sagaEffects) {
+  effects: {
+    * fetch(action, sagaEffects) {
 
-        }
+    }
+  },
+
+
+
+  subscriptions: {
+    setup({ dispatch, history }) {
+      history.listen(({ pathname, search }) => {
+      })
     },
-
-    reducers: {
-        save(state, action) {
-            return { ...state, ...action.payload };
-        },
-    },
-
+  },
 };
 
 

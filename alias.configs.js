@@ -8,5 +8,7 @@ module.exports = {
   'modules': path.resolve(__dirname, './src/modules'),
   'routes': path.resolve(__dirname, "./src/routes"),
   'interfaces': path.resolve(__dirname, "./src/interfaces"),
-  "configs": path.resolve(__dirname, "./src/configs")
+  "configs": path.resolve(__dirname, "./src/configs"),
+  "themes": path.resolve(__dirname, "./src/themes"),
+  "models": path.resolve(__dirname, "./src/models")
 }

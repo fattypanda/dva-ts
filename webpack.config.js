@@ -17,18 +17,28 @@ module.exports = (webpackConfig, env) => {
     "moment"
   ]
 
-  const lessRule = webpackConfig.module.rules[3];
 
-  const sassRule = { ...lessRule },
-    sassRuleUse = sassRule.use;
 
-  sassRule.test = /\.scss$/;
+  if (production) {
+    webpackConfig.plugins.push(
+      new webpack.LoaderOptionsPlugin({
+        minimize: true,
+        debug: false,
+      })
+    )
+  }
+  // const lessRule = webpackConfig.module.rules[3];
 
-  sassRuleUse[sassRuleUse.length - 1] = {
-    loader: "sass"
-  };
+  // const sassRule = { ...lessRule },
+  //   sassRuleUse = sassRule.use;
 
-  webpackConfig.module.rules.push(sassRule);
+  // sassRule.test = /\.scss$/;
+
+  // sassRuleUse[sassRuleUse.length - 1] = {
+  //   loader: "sass"
+  // };
+
+  // webpackConfig.module.rules.push(sassRule);
 
   //awesome-typescript
   // webpackConfig.module.rules[7].use.pop();

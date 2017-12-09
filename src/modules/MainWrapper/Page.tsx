@@ -1,24 +1,51 @@
-import * as React from 'react';
-import { connect } from 'dva';
-import { DatePicker, Button, Card, List, Avatar, Icon } from 'antd';
-import classnames from 'classnames';
-import { Link, withRouter } from 'dva/router';
-const styles = require('./styles.scss');
-function IndexPage({ dispatch, children }) {
-  const header = <div>header</div>
-  return (
-    <div className={styles["title"]}>
-      {children}
-      <Button type="primary" icon="close">default</Button>
-    </div>
-  );
+import * as React from 'react'
+import { connect } from 'dva'
+import { DatePicker, Button, Card, List, Avatar, Icon } from 'antd'
+import classnames from 'classnames'
+import { Link, withRouter } from 'dva/router'
+import { LAYOUT_NAMESPACE } from 'configs/ConstConfig'
+import WithCommonProps from 'domainComponents/WithCommonProps'
+const styles = require("./styles.less")
+
+interface Props {
+
 }
 
-const mapStateToProps = state => {
-  // console.info(state.lastEffectTime)
-  return {
+interface State {
 
+}
+
+
+const mapStateToProps = state => {
+  return {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(IndexPage));
+@withRouter
+@WithCommonProps
+@connect(mapStateToProps)
+class IndexPage extends React.Component<any, any>{
+  constructor(props) {
+    super(props)
+  }
+  render() {
+
+    const { dispatch, children, theme } = this.props;
+    const pageClasses = classnames({
+      [styles["page"]]: true,
+      [styles[theme]]: true
+    })
+
+    return (
+      <div className={pageClasses}>
+        {children}
+        <Button type="primary">test</Button>
+      </div>
+    );
+  }
+}
+
+
+
+
+export default IndexPage

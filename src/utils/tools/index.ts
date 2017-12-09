@@ -9,4 +9,6 @@ export { delay } from './delay'
 
 export { default as queryString } from './queryString'
 
+import * as Ramda from 'ramda'
 
+export const compose = Ramda.compose

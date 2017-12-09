@@ -5,9 +5,12 @@ import createLastEffectTime from 'utils/dvaLastEffectTime'
 import createHistory from 'history/createBrowserHistory'
 import * as tools from 'utils/tools'
 import MainWrapperModel from 'modules/MainWrapper/Model'
+import LayoutModel from 'models/layout'
+import './themes/common.less'
 
 const modelList = [
-  MainWrapperModel
+  MainWrapperModel,
+  LayoutModel
 ]
 
 const app = dva({

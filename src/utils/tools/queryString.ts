@@ -94,8 +94,7 @@ const parse: ParseFn = (str, option) => {
   return result
 
 }
-console.info(
-  stringify({ status: 1, payload: "123123", arr: ["1,2,3,4"] }, { arrayMode: ArrayMode.MUL }))
+
 export default {
   stringify,
   parse,
